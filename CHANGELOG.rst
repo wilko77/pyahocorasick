@@ -2,7 +2,7 @@
 Changelog
 =============
 
-2.3.0 (2025-10-30)
+2.3.0 (2025-11-24)
 --------------------------------------------------
 
 - Drop support for Python 3.9. Use older version for pre-built wheels.

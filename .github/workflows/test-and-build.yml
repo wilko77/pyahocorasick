@@ -74,27 +74,6 @@ jobs:
                   name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
                   path: ./wheelhouse/*.whl
 
-    build_sdist:
-      name: Build source distribution
-      runs-on: ubuntu-24.04
-
-      steps:
-          - uses: actions/checkout@v4
-
-          - name: Checkout and install reqs
-            run: |
-                pip install --upgrade --user build twine packaging pip setuptools
-
-          - name: Build sdist
-            run: |
-                python setup.py sdist
-                twine check dist/*
-
-          - name: Collect built sdist
-            uses: actions/upload-artifact@v4
-            with:
-                path: dist/*.tar.gz
-
     test_on_many_oses:
         name: build ${{ matrix.build_type }} - Run tests ${{ matrix.python }} on ${{ matrix.os }} 
         runs-on: ${{ matrix.os }}
