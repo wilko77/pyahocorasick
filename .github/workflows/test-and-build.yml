@@ -53,6 +53,7 @@ jobs:
                       type: linux-arm64
                       build: "cp{310,311,312,313,314}-*"
                       CIBW_ARCHS_LINUX: aarch64
+                      CIBW_MANYLINUX_AARCH64_IMAGE: manylinux2014
 
                     - os: macos-latest
                       arch: universal2
@@ -71,6 +72,7 @@ jobs:
                   CIBW_BUILD: ${{ matrix.build }}
                   CIBW_MANYLINUX_I686_IMAGE: ${{ matrix.CIBW_MANYLINUX_I686_IMAGE }}
                   CIBW_MANYLINUX_X86_64_IMAGE: ${{ matrix.CIBW_MANYLINUX_X86_64_IMAGE }}
+                  CIBW_MANYLINUX_AARCH64_IMAGE: ${{ matrix.CIBW_MANYLINUX_AARCH64_IMAGE }}
                   CIBW_ARCHS: ${{ matrix.arch }}
                   CIBW_ARCHS_LINUX: ${{ matrix.CIBW_ARCHS_LINUX }}
                   CIBW_TEST_REQUIRES: pytest
