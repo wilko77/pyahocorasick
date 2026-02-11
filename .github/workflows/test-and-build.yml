@@ -49,7 +49,7 @@ jobs:
 
                     - os: ubuntu-24.04-arm
                       arch: auto64
-                      type: linux-arm64
+                      type: manylinux2014-aarch64
                       build: "cp{310,311,312,313,314}-*"
                       CIBW_ARCHS_LINUX: aarch64
                       CIBW_MANYLINUX_AARCH64_IMAGE: manylinux2014
