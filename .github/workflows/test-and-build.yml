@@ -1,4 +1,3 @@
-
 # Derived in part from https://github.com/google/brotli-wheels
 #
 # Copyright (c) 2009, 2010, 2013-2016 by the Brotli Authors.
@@ -94,7 +93,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                os: [ubuntu-22.04, ubuntu-24.04, macos-14, macos-15, windows-2022, windows-2025]
+                os: [ubuntu-22.04, ubuntu-22.04-arm, ubuntu-24.04, ubuntu-24.04-arm, macos-14, macos-15, windows-2022, windows-2025]
                 python: ["3.10", "3.11", "3.12", "3.13", "3.14"]
                 build_type: ["AHOCORASICK_UNICODE", "AHOCORASICK_BYTES"]
 
@@ -112,4 +111,3 @@ jobs:
                   set ${{ matrix.build_type }}=yes &&
                   pip install .[testing] &&
                   pytest -vvs
-
