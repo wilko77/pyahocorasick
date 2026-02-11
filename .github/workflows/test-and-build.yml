@@ -48,7 +48,7 @@ jobs:
                       CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
                       CIBW_ARCHS_LINUX: x86_64
 
-                    - os: ubuntu-24.04-arm64
+                    - os: ubuntu-24.04-arm
                       arch: auto64
                       type: linux-arm64
                       build: "cp{310,311,312,313,314}-*"
